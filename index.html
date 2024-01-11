@@ -8,8 +8,8 @@
 </head>
 <body>
   <div class="container">
-    <h2>Cadastro de Campanha</h2>
     <form id="campanhaForm">
+        <h2 id="formSubtitle">Cadastro de Campanha</h2>
         <label for="maxCliques">Máximo de Cliques:</label>
         <input type="number" id="maxCliques" name="maxCliques" required min="1">
       
@@ -25,7 +25,19 @@
         <button type="button" id="btnSubmit" onclick="cadastrarCampanha()">Cadastrar Campanha</button>
     </form>
 
-    <div id="resultado"></div>
+    <div id="itensCriados">
+      <p class="title">Últimos Itens Criados</p>
+      <table id="itensTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Link de acesso</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    </div>
   </div>
 
   <script src="script.js"></script>

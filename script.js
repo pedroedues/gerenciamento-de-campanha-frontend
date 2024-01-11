@@ -43,23 +43,34 @@ function cadastrarCampanha() {
     }
   })
   .then(data => {
-    mostrarModalSucesso(data);
+    gerarEventoSucesso(data);
   })
   .catch(error => {
-    document.getElementById('resultado').innerHTML = `Erro: ${error.message}`;
+    alert(error.message);
   });
 }
 
 
-function mostrarModalSucesso(data) {
-    // Crie um modal verde ou exiba uma mensagem de sucesso no DOM
-    const modalSucesso = document.createElement('div');
-    modalSucesso.classList.remove('modal-sucesso');
-    modalSucesso.classList.add('modal-sucesso');
-    modalSucesso.innerHTML = `
-      <p>Campanha cadastrada com sucesso!</p>
-      <p>ID: ${data.id}</p>
-      <p>Link de Acesso: ${data.linkDeAcesso}</p>
-    `;
-    document.body.appendChild(modalSucesso);
+function gerarEventoSucesso(data) {
+    alert('Criado campanha com id:' + data.id +  ' com sucesso')
+
+    // const itensCriadosElement = document.getElementById('itensCriados')
+
+    // var itemCriadoParagraph = document.createElement('tr')
+    // itemCriadoParagraph.textContent = `ID: ${data.id} | Link de Acesso: ${data.linkDeAcesso}`
+    
+    // itensCriadosElement.append(itemCriadoParagraph)
+
+    addTableRow(data.id, data.linkDeAcesso)
+  }
+
+  function addTableRow(id, link) {
+    var tableBody = document.getElementById('itensTable').getElementsByTagName('tbody')[0];
+
+    var newRow = tableBody.insertRow(tableBody.rows.length);
+    var cell1 = newRow.insertCell(0);
+    var cell2 = newRow.insertCell(1);
+
+    cell1.textContent = id;
+    cell2.textContent = link;
   }
