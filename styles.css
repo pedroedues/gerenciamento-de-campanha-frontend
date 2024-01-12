@@ -102,3 +102,13 @@ td:last-child {
   align-items: center;
   justify-content: center;
 }
+
+#redirectArea {
+  width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+#campanhaDetails {
+  padding-left: 5%;
+}

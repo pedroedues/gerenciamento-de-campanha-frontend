@@ -36,10 +36,20 @@
         </thead>
         <tbody>
         </tbody>
-    </table>
+      </table>
     </div>
   </div>
-
+  <div id='redirectArea'>
+    <h2>Redirecionamento de Campanha</h2>
+    <div id="dropdownSection">
+      <h3>Campanhas Disponíveis</h3>
+      <select id="campanhaDropdown" onchange="carregarCampanha()" onclick="carregarCampanhasDropdown()">
+        <option value="" disabled selected>Selecione uma campanha</option>
+      </select>
+      <div id="campanhaDetails">
+      </div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
